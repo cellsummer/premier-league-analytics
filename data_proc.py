@@ -110,7 +110,11 @@ class SeasonSummary:
         match_pct = match_cnt / sum(match_cnt) * 100
 
         avg_odds_pin = np.array(
-            [self.data["PSH"].mean(), self.data["PSD"].mean(), self.data["PSA"].mean(),]
+            [
+                self.data["PSH"].mean(),
+                self.data["PSD"].mean(),
+                self.data["PSA"].mean(),
+            ]
         )
         avg_odds_bet = np.array(
             [
@@ -181,7 +185,7 @@ class SeasonSummary:
         return return_df
 
     def summary_goal_markets(self):
-        """ get the goal markets"""
+        """get the goal markets"""
         # num_of_matches = len(df.index)
         df_cols = ["match_cnt", "match_pct", "fair_odds"]
         results = {}
@@ -406,7 +410,7 @@ class SeasonSummary:
         return return_df
 
     def calc_main_tables(self, table_type="overall"):
-        """ calculate the ranking table """
+        """calculate the ranking table"""
         df = self.data
 
         cols = [
@@ -774,8 +778,8 @@ class SeasonSummary:
 
 
 def main():
-    # all_df = read_csv_data()
-    all_df = pd.read_csv("data/bet_data.csv", low_memory=False)
+    all_df = read_csv_data()
+    # all_df = pd.read_csv("data/bet_data.csv", low_memory=False)
     # seasons = all_df.season.unique()
     # for season in seasons:
     #     summary = SeasonSummary(data=all_df, season=season)
